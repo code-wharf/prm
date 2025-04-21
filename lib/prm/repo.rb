@@ -113,7 +113,7 @@ module Debian
 
                     unless sum
                         deb_contents ||= File.read(deb)
-                        sum = algs[s].hexdigest(deb_contents)
+                        sum = algs[s].file(deb).hexdigest
                     end
 
                     sums[s] = sum
